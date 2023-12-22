@@ -1,0 +1,105 @@
+@import url(reset.css);
+
+h2 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+}
+
+p {
+    font-size: 12px;
+    color: #515151;
+    white-space: pre-line;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+}
+
+body {
+    display: grid;
+    grid:
+        "header header" 56px
+        "nav main" auto
+        / 218px auto
+}
+
+header {
+    grid-area: header;
+    padding: 8px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+nav {
+    grid-area: nav;
+    padding: 20px;
+    display: grid;
+    grid: repeat(10, min-content) / min-content auto;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    top: 56px;
+    background-color: white;
+}
+
+main {
+    grid-area: main;
+    padding: 40px 20px;
+    background-color: #F9F9F9;
+    display: grid;
+    grid: repeat(3, min-content) / repeat(auto-fill, 250px);
+    gap: 20px;
+    place-content: center;
+}
+
+.video {
+    display: grid;
+    grid:
+        "thumb thumb" 141px
+        "channel title" auto
+        / min-content calc(250px - 42px);
+    gap: 10px;
+    align-items: start;
+}
+
+.thumbnail {
+    grid-area: thumb;
+    border-radius: 10px;
+}
+
+.channel-avatar {
+    grid-area: channel;
+}
+
+.infos {
+    grid-area: title;
+    margin: 0;
+}
+
+#menu {
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: center;
+    gap: 20px;
+}
+
+#search {
+    display: grid;
+    grid-template-columns: auto min-content;
+}
+
+#personal {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+}
